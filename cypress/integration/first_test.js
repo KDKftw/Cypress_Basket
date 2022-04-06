@@ -15,15 +15,16 @@ it("URL hp test", function () {
 
 	cy.visit(URL_detail_late_departure)
 	cy.get('.order > .f_button-text').click()
-	cy.get(':nth-child(1) > .f_input-wrapper > .f_input > .f_input-item', { timeout: 10000 }).should('be.visible')
+	cy.get(':nth-child(1) > .f_input-wrapper > .f_input > .f_input-item', { timeout: 40000 }).should('be.visible')
+//detail zajezdu -> kosik -> vyplneni 4 zakladnich udaju
 	cy.get(':nth-child(1) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get(':nth-child(2) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get(':nth-child(3) > .f_input-wrapper > .f_input > .f_input-item').type(Email)
 	cy.get('.vti__input').type(PhoneNumber)
 	cy.get('[data-testid="nextStep"]').click()
 
-
-	cy.get('[data-testid="serviceGroup-recommended"] > [data-testid="serviceItem-2233"]', { timeout: 40000 }).should('be.visible')
+	//
+	cy.get('[data-testid="serviceGroup-recommended"] > [data-testid="serviceItem-2233"]', { timeout: 80000 }).should('be.visible')
 	cy.get('.f_section-content-item > .f_form > :nth-child(1) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_input-wrapper > .f_input > .f_input-item').type(randomNumbers)
 	cy.get('.f_form > :nth-child(3) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
