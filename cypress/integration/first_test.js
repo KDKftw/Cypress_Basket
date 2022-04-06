@@ -7,6 +7,19 @@ const Email = "ondrej.kadoun@fischer.cz"
 const PhoneNumber = "735599725"
 const randomNumbers = "12345"
 
+
+function createLocatorSexChoose(numberOfPassenger) {
+	const elementLocator = ':nth-child('
+
+	const elementLocator2 = ') > .f_form-item--salutation > [data-v-70c83e93=""] > .f_input > .f_input-item'
+	const elementLocatorNumberOfPassenger = elementLocator + numberOfPassenger + elementLocator2
+	console.log(elementLocatorNumberOfPassenger)
+	return elementLocatorNumberOfPassenger
+
+}
+
+
+
 it("URL hp test", function () {
 
 	Cypress.on('uncaught:exception', (err, runnable) => {
@@ -23,13 +36,21 @@ it("URL hp test", function () {
 	cy.get('.vti__input').type(PhoneNumber)
 	cy.get('[data-testid="nextStep"]').click()
 
-	//
+	//ulice, cislo popisne, mesto, psc
 	cy.get('[data-testid="serviceGroup-recommended"] > [data-testid="serviceItem-2233"]', { timeout: 80000 }).should('be.visible')
 	cy.get('.f_section-content-item > .f_form > :nth-child(1) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_input-wrapper > .f_input > .f_input-item').type(randomNumbers)
 	cy.get('.f_form > :nth-child(3) > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(4) > .f_input-wrapper > .f_input > .f_input-item').type(randomNumbers)
 
+	//cestujici 2 names
+	cy.get(':nth-child(2) > .f_form-item--firstName > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
+	cy.get(':nth-child(2) > .f_form-item--lastName > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
+
+	//cestujici 1 sex
+	cy.get(createLocatorSexChoose(1)).click()
+	cy.get('[data-v-d4e6e290=""][style=""] > .f_input-options > .f_input-options-content > .f_customScroll > :nth-child(1) > [data-testid="Pan"]').click()
+	cy.get('[data-v-d4e6e290=""][style=""] > .f_input-options > .f_input-options-content > .f_input-footer > .f_button').click()
 
 
 } )
