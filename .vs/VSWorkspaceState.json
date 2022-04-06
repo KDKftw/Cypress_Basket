@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cypress",
-    "\\cypress\\integration",
-    "\\vueproject1",
-    "\\vueproject1\\cypress"
+    "\\cypress\\integration"
   ],
-  "SelectedNode": "\\vueproject1\\cypress\\integration",
+  "SelectedNode": "\\fnc_t.js",
   "PreviewInSolutionExplorer": false
 }
