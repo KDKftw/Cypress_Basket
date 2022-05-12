@@ -72,6 +72,9 @@ it("URL hp test", function () {
 	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
 	//cy.xpath('//*[@class="vdatetime-popup"]//*[@class="vdatetime-year-picker__list"]//*[contains(text(), "1969")]').scrollIntoView().click()
 	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
+	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
+	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
+
 	cy.get('.f_form > :nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
 	cy.get('.f_form > :nth-child(3) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
