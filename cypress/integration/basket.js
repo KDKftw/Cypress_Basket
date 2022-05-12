@@ -42,6 +42,17 @@ function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 
 }
 
+const datePickerConstLocator = "birthDate"
+function datePicker() {
+	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
+	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
+	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
+	console.log("date picker finished")
+
+
+}
+
 it("URL hp test", function () {
 
 	Cypress.on('uncaught:exception', (err, runnable) => {
@@ -64,16 +75,48 @@ it("URL hp test", function () {
 	//ulice, cislo popisne, mesto, psc
 	cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
 
-	//*[@class="vdatetime-year-picker__list"]//*[contains(text(), "1969")]
 
 	cy.xpath(createLocator(0, 1, "name.last")).type(JmenoPrijmeniTest)
-	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
 
+	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
 	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
-	//cy.xpath('//*[@class="vdatetime-popup"]//*[@class="vdatetime-year-picker__list"]//*[contains(text(), "1969")]').scrollIntoView().click()
 	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
 	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
 	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
+
+	cy.xpath(createLocator(0, 2, datePickerConstLocator)).click()
+	datePicker()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	cy.get('.f_form > :nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
