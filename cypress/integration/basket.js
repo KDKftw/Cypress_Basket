@@ -43,6 +43,9 @@ function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 }
 
 const datePickerConstLocator = "birthDate"
+const lastNameConstLocator = "name.last"
+const firstNameConstLocator = "name.first"
+
 function datePicker() {
 	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
 	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
@@ -76,7 +79,7 @@ it("URL hp test", function () {
 	cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
 
 
-	cy.xpath(createLocator(0, 1, "name.last")).type(JmenoPrijmeniTest)
+	
 
 	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
 	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
@@ -89,6 +92,8 @@ it("URL hp test", function () {
 
 
 
+	cy.xpath(createLocator(0, 2, lastNameConstLocator)).type(JmenoPrijmeniTest)
+	cy.xpath(createLocator(0, 2, firstNameConstLocator)).type(JmenoPrijmeniTest)
 
 
 
@@ -97,40 +102,6 @@ it("URL hp test", function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	cy.get('.f_form > :nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
-	cy.get('.f_form > :nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
-	cy.get('.f_form > :nth-child(3) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
-	cy.get(':nth-child(4) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
-
-	//cestujici 2 names
-	cy.get(':nth-child(2) > .f_form-item--firstName > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
-	cy.get(':nth-child(2) > .f_form-item--lastName > .f_input-wrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
-
-	//cestujici 1 sex
-	cy.get(createLocatorSexChoose(1)).click()
-	cy.get('[data-v-d4e6e290=""][style=""] > .f_input-options > .f_input-options-content > .f_customScroll > :nth-child(1) > [data-testid="Pan"]').click()
-	cy.get('[data-v-d4e6e290=""][style=""] > .f_input-options > .f_input-options-content > .f_input-footer > .f_button').click()
 
 
 })
