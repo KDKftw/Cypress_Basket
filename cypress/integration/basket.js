@@ -53,7 +53,7 @@ it("URL hp test", function () {
 	cy.get('[data-testid="tab-buyOnline"]', { timeout: 40000 }).should('be.visible')
 	//detail zajezdu -> kosik -> vyplneni 4 zakladnich udaju
 
-
+	//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]
 
 	cy.get(':nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get(':nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
@@ -63,7 +63,15 @@ it("URL hp test", function () {
 
 	//ulice, cislo popisne, mesto, psc
 	cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
-	cy.xpath(createLocator(0, 1, "name.last" )).type(JmenoPrijmeniTest)
+
+	//*[@class="vdatetime-year-picker__list"]//*[contains(text(), "1969")]
+
+	cy.xpath(createLocator(0, 1, "name.last")).type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
+
+	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+	//cy.xpath('//*[@class="vdatetime-popup"]//*[@class="vdatetime-year-picker__list"]//*[contains(text(), "1969")]').scrollIntoView().click()
+	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
 	cy.get('.f_form > :nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
 	cy.get('.f_form > :nth-child(3) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
