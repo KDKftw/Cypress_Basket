@@ -45,6 +45,9 @@ function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 const datePickerConstLocator = "birthDate"
 const lastNameConstLocator = "name.last"
 const firstNameConstLocator = "name.first"
+const salutationConstLocator = "salutation"
+const citizenshipConstLocator = "citizenshipCode"
+
 
 function datePicker() {
 	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
@@ -90,10 +93,21 @@ it("URL hp test", function () {
 	cy.xpath(createLocator(0, 2, datePickerConstLocator)).click()
 	datePicker()
 
+	//generalizovat vse pro vyplneni jedne osoby do gen. funkce
 
 
 	cy.xpath(createLocator(0, 2, lastNameConstLocator)).type(JmenoPrijmeniTest)
 	cy.xpath(createLocator(0, 2, firstNameConstLocator)).type(JmenoPrijmeniTest)
+
+	cy.xpath(createLocator(0, 2, salutationConstLocator)).click()
+	cy.get('[data-testid="Žena"]').click()
+
+	cy.xpath(createLocator(0, 2, citizenshipConstLocator)).click()
+	cy.get('[data-testid="ESH"]').scrollIntoView().click()
+
+
+	//cy.xpath('//*[@class="f_section-header"] //*[@class="f_input-content"]').click()
+	//cy.get('.f_form-item--salutation > [flow=""] > .f_input > .f_input-item > .f_input-item-value_set--empty').click()
 
 
 
