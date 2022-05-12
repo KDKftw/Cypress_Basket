@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\cypress",
-    "\\cypress\\plugins"
+    "\\cypress\\downloads",
+    "\\cypress\\fixtures",
+    "\\cypress\\integration",
+    "\\cypress\\plugins",
+    "\\cypress\\support"
   ],
-  "SelectedNode": "\\cypress\\plugins\\index.js",
+  "SelectedNode": "\\cypress\\support\\index.js",
   "PreviewInSolutionExplorer": false
 }

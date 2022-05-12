@@ -62,7 +62,7 @@ it("URL hp test", function () {
 
 	//ulice, cislo popisne, mesto, psc
 	cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
-	cy.xpath(createLocator(0, 1, "name.last")).type(JmenoPrijmeniTest)
+	cy.xpath(createLocator(0, 1, "name.last" )).type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get('.f_form > :nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(randomNumbers)
 	cy.get('.f_form > :nth-child(3) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
