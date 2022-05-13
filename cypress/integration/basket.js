@@ -68,6 +68,11 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger) {
 
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
 	cy.get('[data-testid="ESH"]').scrollIntoView().click()
+
+	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
+
+	datePicker()
+
 	console.log("cestujici filler finished")
 
 
@@ -132,7 +137,13 @@ it("Basket walkthrough", function () {
 	//cy.xpath('//*[@class="f_section-header"] //*[@class="f_input-content"]').click()
 	//cy.get('.f_form-item--salutation > [flow=""] > .f_input > .f_input-item > .f_input-item-value_set--empty').click()
 
+	cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
+	
+	cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
+	cy.xpath('//*[@name="agreement.agree"]').click()
+	
+	cy.xpath('//*[@name="agreement.MTK_DEK"]').click()
 
 
 
