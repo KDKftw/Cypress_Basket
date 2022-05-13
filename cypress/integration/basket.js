@@ -22,10 +22,10 @@ function createLocatorSexChoose(numberOfPassenger) {
 
 }
 
-//*[@name="room.0.passenger.1.name.last"]
+
 // roomNumber, passengerNumber, coVyplnjuu
 
-//
+
 function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 	const elementLocator = '//*[@name="room.'
 
@@ -59,7 +59,21 @@ function datePicker() {
 
 }
 
-it("URL hp test", function () {
+function cestujiciFiller(numberOfRoom, numberOfPassenger) {
+	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
+	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
+
+	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
+	cy.get('[data-testid="Žena"]').click()
+
+	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+	cy.get('[data-testid="ESH"]').scrollIntoView().click()
+	console.log("cestujici filler finished")
+
+
+}
+
+it("Basket walkthrough", function () {
 
 	Cypress.on('uncaught:exception', (err, runnable) => {
 		return false;
@@ -104,6 +118,15 @@ it("URL hp test", function () {
 
 	cy.xpath(createLocator(0, 2, citizenshipConstLocator)).click()
 	cy.get('[data-testid="ESH"]').scrollIntoView().click()
+
+	cestujiciFiller(0, 1)
+
+	
+
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.street"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.streetNumber"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.city"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.zip"]').type(randomNumbers)
 
 
 	//cy.xpath('//*[@class="f_section-header"] //*[@class="f_input-content"]').click()
