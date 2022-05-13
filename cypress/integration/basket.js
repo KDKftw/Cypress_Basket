@@ -11,35 +11,15 @@ const Email = "ondrej.kadoun@fischer.cz"
 const PhoneNumber = "735599725"
 const randomNumbers = "12345"
 
-
-function createLocatorSexChoose(numberOfPassenger) {
-	const elementLocator = ':nth-child('
-
-	const elementLocator2 = ') > .f_form-item--salutation > [data-v-70c83e93=""] > .f_input > .f_input-item'
-	const elementLocatorNumberOfPassenger = elementLocator + numberOfPassenger + elementLocator2
-	console.log(elementLocatorNumberOfPassenger)
-	return elementLocatorNumberOfPassenger
-
-}
-
-
-// roomNumber, passengerNumber, coVyplnjuu
-
-
+// roomNumber(starts from 0), passengerNumber(starts from 1), Typ inputu co Vyplnjuu
 function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 	const elementLocator = '//*[@name="room.'
-
 	const elementLocator2 = '.passenger.'
-
-
 	const elementLocator3 = '.'
 	const elementLocator4 = '"]'
-
 	const finalLocator = elementLocator + numberOfRoom + elementLocator2 + numberOfPassenger + elementLocator3 + typeOfInput + elementLocator4
-
 	console.log(finalLocator)
 	return finalLocator
-
 }
 
 const datePickerConstLocator = "birthDate"
@@ -55,27 +35,18 @@ function datePicker() {
 	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
 	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
 	console.log("date picker finished")
-
-
 }
 
 function cestujiciFiller(numberOfRoom, numberOfPassenger) {
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
-
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
 	cy.get('[data-testid="Žena"]').click()
-
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
 	cy.get('[data-testid="ESH"]').scrollIntoView().click()
-
 	cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
-
 	datePicker()
-
 	console.log("cestujici filler finished")
-
-
 }
 
 it("Basket walkthrough", function () {
