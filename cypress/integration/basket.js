@@ -16,6 +16,12 @@ const Email = "ondrej.kadoun@fischer.cz"
 const PhoneNumber = "735599725"
 const randomNumbers = "12345"
 
+const datePickerConstLocator = "birthDate"
+const lastNameConstLocator = "name.last"
+const firstNameConstLocator = "name.first"
+const salutationConstLocator = "salutation"
+const citizenshipConstLocator = "citizenshipCode"
+
 // roomNumber(starts from 0), passengerNumber(starts from 1), Typ inputu co Vyplnjuu
 function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 	const elementLocator = '//*[@name="room.'
@@ -27,11 +33,7 @@ function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 	return finalLocator
 }
 
-const datePickerConstLocator = "birthDate"
-const lastNameConstLocator = "name.last"
-const firstNameConstLocator = "name.first"
-const salutationConstLocator = "salutation"
-const citizenshipConstLocator = "citizenshipCode"
+
 
 
 function objednavatelFiller() {
@@ -135,6 +137,7 @@ it("Basket walkthrough", function () {
 	cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
 	
+	//KROK3
 	cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
 	cy.xpath('//*[@name="agreement.agree"]').click()
 	
