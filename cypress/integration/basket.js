@@ -33,7 +33,18 @@ const firstNameConstLocator = "name.first"
 const salutationConstLocator = "salutation"
 const citizenshipConstLocator = "citizenshipCode"
 
-//if kid diff year chose
+
+function objednavatelFiller() {
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.street"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.streetNumber"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.city"]').type(JmenoPrijmeniTest)
+	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.zip"]').type(randomNumbers)
+	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
+	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+	datePicker()
+
+}
+
 function datePicker(ageOfPassenger) {
 	if (ageOfPassenger === undefined) {
 
@@ -55,7 +66,7 @@ function datePicker(ageOfPassenger) {
 		console.log("date picker finished")
 	}
 }
-//if infant skip sex choser
+
 function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
 
 	if (ageOfPassenger === undefined) {
@@ -119,42 +130,15 @@ it("Basket walkthrough", function () {
 
 
 	
-
-	cy.xpath('//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]').click()
-	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+	objednavatelFiller()
+	
 	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
 	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
 	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
 
-	//cy.xpath(createLocator(0, 2, datePickerConstLocator)).click()
-	//datePicker()
-
-	//generalizovat vse pro vyplneni jedne osoby do gen. funkce
-
-
-	cy.xpath(createLocator(0, 2, lastNameConstLocator)).type(JmenoPrijmeniTest)
-	cy.xpath(createLocator(0, 2, firstNameConstLocator)).type(JmenoPrijmeniTest)
-
-	//cy.xpath(createLocator(0, 2, salutationConstLocator)).click()
-	//cy.get('[data-testid="Žena"]').click()
-
-	//cy.xpath(createLocator(0, 2, citizenshipConstLocator)).click()
-	//cy.get('[data-testid="ESH"]').scrollIntoView().click()
-
 	cestujiciFiller(0, 1)
 	cestujiciFiller(0, 2)
-
-	cestujiciFiller(0, 3, "infant")
-	
-
-	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.street"]').type(JmenoPrijmeniTest)
-	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.streetNumber"]').type(JmenoPrijmeniTest)
-	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.city"]').type(JmenoPrijmeniTest)
-	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.zip"]').type(randomNumbers)
-
-
-	//cy.xpath('//*[@class="f_section-header"] //*[@class="f_input-content"]').click()
-	//cy.get('.f_form-item--salutation > [flow=""] > .f_input > .f_input-item > .f_input-item-value_set--empty').click()
+	cestujiciFiller(0, 3, "infant")		
 
 	cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
