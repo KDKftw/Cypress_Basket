@@ -34,12 +34,26 @@ const salutationConstLocator = "salutation"
 const citizenshipConstLocator = "citizenshipCode"
 
 //if kid diff year chose
-function datePicker() {
-	cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
-	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
-	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
-	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
-	console.log("date picker finished")
+function datePicker(ageOfPassenger) {
+	if (ageOfPassenger === undefined) {
+
+		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+		cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
+		cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
+		cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
+		console.log("date picker finished")
+	}
+
+	
+
+	if (ageOfPassenger === "infant") {
+
+		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+		cy.get('.vdatetime-year-picker__item--current').click()
+		cy.get('.vdatetime-month-picker__list > :nth-child(4)', { timeout: 40000 } ).scrollIntoView().click()
+		cy.get(':nth-child(30) > :nth-child(1) > span').scrollIntoView().click()
+		console.log("date picker finished")
+	}
 }
 //if infant skip sex choser
 function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
@@ -52,15 +66,28 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
 		cy.get('[data-testid="Muž"]').click()
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker()
+
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+		cy.get('[data-testid="ESH"]').scrollIntoView().click()
+
 		console.log("cestujici filler finished")
 
-	}
+		}
 
-
+	if (ageOfPassenger === "infant") {
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
+		datePicker("infant")
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+		cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		console.log("cestujici filler finished")
+	
+		}
 	//cy.get('[data-testid="Žena"]').click()
-	//cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+	//
 	//ne vsude maji nutne ctizenship, asi generalizovat do nejakeho parametru
-	//cy.get('[data-testid="ESH"]').scrollIntoView().click()
+	//
 
 
 	
@@ -74,8 +101,8 @@ it("Basket walkthrough", function () {
 	});
 
 	cy.visit(URL_detail_late_departure)
-	cy.get(':nth-child(3) > .order > .f_button-text').click()
-	//cy.xpath("//*[@class='c_btn block green mt-4 relative']").click()
+	cy.get(':nth-child(3) > .order > .f_button-text').click()				   //ew2 dev
+	//cy.xpath("//*[@class='c_btn block green mt-4 relative']").click()		 //billa a penny
 	cy.get('[data-testid="tab-buyOnline"]', { timeout: 40000 }).should('be.visible')
 	//detail zajezdu -> kosik -> vyplneni 4 zakladnich udaju
 
@@ -116,6 +143,8 @@ it("Basket walkthrough", function () {
 
 	cestujiciFiller(0, 1)
 	cestujiciFiller(0, 2)
+
+	cestujiciFiller(0, 3, "infant")
 	
 
 	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.street"]').type(JmenoPrijmeniTest)
