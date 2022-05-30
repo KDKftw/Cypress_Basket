@@ -117,8 +117,6 @@ it("Basket walkthrough", function () {
 	cy.get('[data-testid="tab-buyOnline"]', { timeout: 40000 }).should('be.visible')
 	//detail zajezdu -> kosik -> vyplneni 4 zakladnich udaju
 
-	//*[@testid="objednavatelInfo"]//*[@class="vdatetime f_input f_input--datePicker"]
-
 	cy.get(':nth-child(1) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get(':nth-child(2) > .f_inputWrapper > .f_input > .f_input-item').type(JmenoPrijmeniTest)
 	cy.get(':nth-child(3) > .f_inputWrapper > .f_input > .f_input-item').type(Email)
@@ -127,15 +125,9 @@ it("Basket walkthrough", function () {
 
 	//ulice, cislo popisne, mesto, psc
 	cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
+	//KROK2
 
-
-	
 	objednavatelFiller()
-	
-	cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
-	cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
-	cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
-
 	cestujiciFiller(0, 1)
 	cestujiciFiller(0, 2)
 	cestujiciFiller(0, 3, "infant")		
