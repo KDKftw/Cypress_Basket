@@ -12,7 +12,13 @@ const URL_base = "https://fischer.cz"
 //const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/recko/kos/lambi/aeolos-beac?KEY=2144713080&DS=1024&GIATA=702&D=63220|63316|63319|63324|63333|63402|63409|63471&HID=8840&MT=2&RT=21&NN=7&RD=2022-07-17&DD=2022-07-09&DP=4312&MNN=7&TT=1&PID=2060&DPR=EXIM%20TOURS&TTM=1&DF=2022-07-09|2022-08-09&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=1"
 //const URL_detail_late_departure	="https://billa.dev.dtweb.cz/spanelsko/mallorca/s-illot/mix-colomb?KEY=2295589881&DS=1024&GIATA=3561&D=63213%7C63216%7C63218%7C63349%7C63226%7C63227%7C63231%7C64429%7C63241%7C63242%7C63243%7C63244%7C63245%7C74462%7C63263%7C63267%7C74459%7C63272%7C74460%7C63284%7C63299%7C63334%7C63313%7C74461%7C78291%7C74463%7C63328%7C74464%7C63350%7C64430%7C63354%7C63360%7C63363%7C74465%7C63455&HID=9202&MT=5&RT=15&NN=7&DF=2022-06-02%7C2022-08-01&RD=2022-06-23&DD=2022-06-15&AC1=2&KC1=0&IC1=0&DP=2682&MNN=7&NNM=7&TT=1&MS=1&PID=19705&DPR=EXIM%20TOURS&ILM=0&IFM=0"
 //const URL_detail_late_departure	= "https://billa.dev.dtweb.cz/spanelsko/mallorca/el-arenal/whala-beac?KEY=2212887445&DS=1024&GIATA=365367&D=63213|63216|63218|63349|63226|63227|63231|64429|63241|63242|63243|63244|63245|74462|63263|63267|74459|63272|74460|63284|63299|63334|63313|74461|78291|74463|63328|74464|63350|64430|63354|63360|63363|74465|63455&HID=9235&MT=2&RT=15&NN=7&DF=2022-06-15|2022-06-23&RD=2022-06-23&DD=2022-06-15&AC1=2&KC1=0&IC1=0&DP=2682&MNN=7&NNM=7&TT=1&TTM=1&PID=24865&DPR=EXIM%20TOURS"
+  //EW dev1 EW produkt
+//const URL_detail_late_departure = "https://exim.dev.dtweb.cz/spojene-arabske-emiraty/ras-al-khaimah/ras-al-khaimah/hampton-by-hilton-marjan-island?KEY=2223736600&DS=1024&GIATA=1009408&D=63220|63316|63319|63324|63333|63402|63409|63471|64087|64094|64089|64090|64091|64092|63284|63350|63354|64095|64086&HID=10965&MT=2&RT=15&NN=7&RD=2022-08-23&DD=2022-08-15&DP=4312&MNN=7&TT=1&PID=341756&DPR=EXIM%20TOURS&TTM=1&DF=2022-08-15|2022-09-15&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 
+//EW dev1 FW produkt
+
+//const URL_detail_late_departure = "https://exim.dev.dtweb.cz/spanelsko/mallorca/el-arenal/pinero-ta?KEY=0x2920E5633F2E68CC3EEC489EB1E8628EC16D96A2&DS=1&GIATA=3359&D=63284|63350|63354&HID=9217&MT=2&DI=47&RT=15&NN=7&RD=2022-09-21&DD=2022-09-14&DP=4305&MNN=7&TT=1&PID=MTAL&DPR=Fischer&TTM=1&DF=2022-09-14|2022-10-15&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+const URL_detail_late_departure = "https://exim.dev.dtweb.cz/bulharsko/burgas/slunecne-pobrezi/balaton-hotel?KEY=0x763C0BE141F73231EC4FB7121B4D69D790DF7826&DS=1&GIATA=199&D=63484|63483&HID=11589&MT=1&DI=49&RT=15&NN=7&RD=2022-08-30&DD=2022-08-23&DP=4312&MNN=7&TT=1&PID=JBALA&DPR=Fischer&TTM=1&DF=2022-08-23|2022-09-23&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 
   //EXIM DEV2 ATCOM KOSIKY, EW PRODUKT NA DEV2
 
@@ -21,12 +27,25 @@ const URL_base = "https://fischer.cz"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/nefeli-agios-nikita?DS=8192&GIATA=81982&D=63333|63284|63354&HID=9304&MT=1&NN=7&RD=2022-08-10&DD=2022-08-03&DP=4312&MNN=7&TT=1&PID=PVK90009&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-03|2022-09-03&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure =  "https://exim2.dev.dtweb.cz/recko/lefkada/nidri/delfini-h?DS=8192&GIATA=538958&D=63333|63284|63354&HID=9309&MT=2&NN=7&RD=2022-07-14&DD=2022-07-07&DP=4305&MNN=7&TT=1&PID=PVK90004&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-07-07|2022-08-07&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/skyros/skyros/perigiali-beach-pensio?DS=8192&GIATA=413967&D=63333|63284|63354&HID=9326&MT=2&NN=7&RD=2022-08-08&DD=2022-08-01&DP=4312&MNN=7&TT=1&PID=PVK90013&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-01|2022-09-01&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
-const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/santa-marina-pvk?DS=8192&GIATA=21088&D=63333|63284|63354&HID=12262&MT=2&NN=7&RD=2022-07-14&DD=2022-07-07&DP=4305&MNN=7&TT=1&PID=PVK90017&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-07-07|2022-08-07&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+//const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/santa-marina-pvk?DS=8192&GIATA=21088&D=63333|63284|63354&HID=12262&MT=2&NN=7&RD=2022-07-14&DD=2022-07-07&DP=4305&MNN=7&TT=1&PID=PVK90017&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-07-07|2022-08-07&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+//const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/santo-tomas/globales-aptos-lord-nelson?DS=8192&GIATA=157707&D=63333|63284|63354&HID=130032&MT=3&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90007&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+//const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/nefeli-agios-nikita?DS=8192&GIATA=81982&D=63333|63284|63354&HID=9304&MT=1&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90009&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+
+	//EXIM DEV2 ATCOM, FW PRODUKT
+//const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-bosch/marinda-garden?DS=256&GIATA=3596&D=63333|63284|63354&HID=11387&MT=6&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90009&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+
+	//FW dev1, exim produkt
+//const URL_detail_late_departure = "https://fischer.dev.dtweb.cz/recko/kreta-heraklion/bali/athina?KEY=2162296663&DS=1024&GIATA=8225&D=623|741|735|618|619|624|973|993|595|972|648|746|953|1108|611|610|592|612|590|726|609|677|605|745|1061|965|822|1126|1129|826|1124|1128|1059|1118|1119|1121|1127|1125|861|1115|1132|1120|709|711|1117|603|1116|1130|1131|614|1123|1093|1198|1114|1122|620|621|1009|680|622|669|1086|1194|670|978|594|675|1010|683&HID=8523&MT=2&RT=22&NN=7&RD=2022-07-28&DD=2022-07-21&DP=2682&MNN=7&TT=1&PID=5613&DPR=EXIM%20TOURS&TTM=1&DF=2022-07-21|2022-08-21&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 
 
-const JmenoPrijmeniTest = "TEST"
-const Email = "ondrej.kadoun@fischer.cz"
-const PhoneNumber = "735599725"
+	//Etravel
+//const URL_detail_late_departure = "https://etravel.dev.dtweb.cz/recko/santorini/kamari/ira-studios?KEY=2318727962&DS=1024&GIATA=0&D=63220|63281|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428|63442|63472&HID=130015&MT=6&RT=15&NN=7&DF=2022-07-08|2022-08-31&RD=2022-07-29&DD=2022-07-22&AC1=2&KC1=0&IC1=0&DP=4312&MNN=7&NNM=7|8|9&TT=1&TTM=0&PID=29292&DPR=EXIM%20TOURS"
+
+const JmenoPrijmeniTest = "necojineho"
+//const Email = "ondrej.kadoun@fischer.cz"
+const Email = "o.kadoun@gmail.com"
+//const PhoneNumber = "735599725"
+const PhoneNumber = "705958215"
 const randomNumbers = "12345"
 
 const datePickerConstLocator = "birthDate"
@@ -66,7 +85,8 @@ function datePicker(ageOfPassenger) {
 		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
 		cy.get('.vdatetime-year-picker__list > :nth-child(66)').scrollIntoView().click()
 		cy.get('.vdatetime-month-picker__list > :nth-child(4)').scrollIntoView().click()
-		cy.get(':nth-child(10) > :nth-child(1) > span').scrollIntoView().click()
+		//cy.get(':nth-child(10) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
+		cy.get(':nth-child(24) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
 		console.log("date picker finished")
 	}
 
@@ -77,7 +97,7 @@ function datePicker(ageOfPassenger) {
 		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
 		cy.get('.vdatetime-year-picker__item--current').click()
 		cy.get('.vdatetime-month-picker__list > :nth-child(4)', { timeout: 40000 } ).scrollIntoView().click()
-		cy.get(':nth-child(30) > :nth-child(1) > span').scrollIntoView().click()
+		cy.get(':nth-child(30) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
 		console.log("date picker finished")
 	}
 }
