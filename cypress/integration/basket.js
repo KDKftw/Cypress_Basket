@@ -19,7 +19,7 @@ const URL_base = "https://fischer.cz"
 
 //const URL_detail_late_departure = "https://exim.dev.dtweb.cz/spanelsko/mallorca/el-arenal/pinero-ta?KEY=0x2920E5633F2E68CC3EEC489EB1E8628EC16D96A2&DS=1&GIATA=3359&D=63284|63350|63354&HID=9217&MT=2&DI=47&RT=15&NN=7&RD=2022-09-21&DD=2022-09-14&DP=4305&MNN=7&TT=1&PID=MTAL&DPR=Fischer&TTM=1&DF=2022-09-14|2022-10-15&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure = "https://exim.dev.dtweb.cz/bulharsko/burgas/slunecne-pobrezi/balaton-hotel?KEY=0x763C0BE141F73231EC4FB7121B4D69D790DF7826&DS=1&GIATA=199&D=63484|63483&HID=11589&MT=1&DI=49&RT=15&NN=7&RD=2022-08-30&DD=2022-08-23&DP=4312&MNN=7&TT=1&PID=JBALA&DPR=Fischer&TTM=1&DF=2022-08-23|2022-09-23&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
-
+const URL_detail_late_departure = "https://exim.dev.dtweb.cz/recko/rhodos/afanadou/triantafillas?KEY=0x09D4A77AFC51B0459FE9ABA22D1EEE3782BE544A&DS=1&GIATA=239155&D=63220|63316|63319|63324|63333|63402|63409|63471&HID=13252&MT=1&DI=49&RT=22&NN=7&RD=2022-08-11&DD=2022-08-04&DP=4305&MNN=7&TT=1&PID=RTRI&DPR=Fischer&TTM=1&DF=2022-08-04|2022-09-04&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
   //EXIM DEV2 ATCOM KOSIKY, EW PRODUKT NA DEV2
 
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/vassiliki/hotel-villa-maki?DS=8192&GIATA=0&D=63333|63284|63354&HID=9314&MT=6&NN=7&RD=2022-07-25&DD=2022-07-18&DP=4312&MNN=7&TT=1&PID=PVK90019&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-07-18|2022-08-18&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
@@ -35,7 +35,7 @@ const URL_base = "https://fischer.cz"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-bosch/marinda-garden?DS=256&GIATA=3596&D=63333|63284|63354&HID=11387&MT=6&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90009&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-bosch/marinda-garden?DS=256&GIATA=3596&D=63354&HID=11387&MT=6&NN=7&RD=2022-09-07&DD=2022-08-31&DP=4312&MNN=7&TT=1&PID=MAH90009&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-31|2022-10-01&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0#"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/ciutadella/globales-almirante-farragut?DS=256&GIATA=3598&D=63354&HID=11345&MT=2&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90008&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=1"
-const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-blanca/globales-mediterrani?DS=256&GIATA=3584&D=63354&HID=11392&MT=5&NN=7&RD=2022-09-10&DD=2022-09-03&DP=4312&MNN=7&TT=1&PID=MAH90015&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-09-03|2022-10-04&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=4&ic1=1"
+//const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-blanca/globales-mediterrani?DS=256&GIATA=3584&D=63354&HID=11392&MT=5&NN=7&RD=2022-09-10&DD=2022-09-03&DP=4312&MNN=7&TT=1&PID=MAH90015&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-09-03|2022-10-04&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=4&ic1=1"
 
 
 	//FW dev1, exim produkt
@@ -176,7 +176,7 @@ it("Basket walkthrough", function () {
 	objednavatelFiller()
 	cestujiciFiller(0, 1)
 	cestujiciFiller(0, 2)
-	cestujiciFiller(0, 3, "infant")		
+	//cestujiciFiller(0, 3, "infant")		
 
 	cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
