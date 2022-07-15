@@ -167,7 +167,7 @@ it("Basket walkthrough", function () {
 		cestujiciFiller(0, 1)
 		cestujiciFiller(0, 2)
 		//cestujiciFiller(0, 3, "infant")	
-		cestujiciFiller(0, 3, "age12")
+		//cestujiciFiller(0, 3, "age12")
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
