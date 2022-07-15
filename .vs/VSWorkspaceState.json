@@ -8,5 +8,6 @@
     "\\cypress\\plugins",
     "\\cypress\\support"
   ],
+  "SelectedNode": "\\cypress\\integration\\import_urls.js",
   "PreviewInSolutionExplorer": false
 }
