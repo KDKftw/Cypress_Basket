@@ -60,7 +60,23 @@ function datePicker(ageOfPassenger) {
 		cy.get(':nth-child(30) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
 		console.log("date picker finished")
 	}
+
+	if (ageOfPassenger === "age12") {
+
+		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 40000 }).should('be.visible')
+		cy.get('.vdatetime-year-picker__item--current').click()
+		cy.get(':nth-child(91)', { timeout: 40000 }).scrollIntoView().click()
+		cy.get(':nth-child(30) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
+		console.log("date picker finished")
+	}
+
+
+
+
 }
+
+
+
 
 function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
 	function cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger) {
@@ -95,7 +111,17 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
 		//cy.get('[data-testid="ESH"]').scrollIntoView().click()
 		console.log("cestujici filler finished")
 	
-		}
+	}
+	if (ageOfPassenger === "age12") {
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
+		datePicker("infant")
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+		cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		console.log("cestujici filler finished")
+
+	}
 	//cy.get('[data-testid="Žena"]').click()
 	//
 	//ne vsude maji nutne ctizenship, asi generalizovat do nejakeho parametru
@@ -136,11 +162,12 @@ it("Basket walkthrough", function () {
 		//ulice, cislo popisne, mesto, psc
 		cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
 		//KROK2
-		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
+		//cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		objednavatelFiller()
 		cestujiciFiller(0, 1)
 		cestujiciFiller(0, 2)
-		//cestujiciFiller(0, 3, "infant")		
+		//cestujiciFiller(0, 3, "infant")	
+		cestujiciFiller(0, 3, "age12")
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
