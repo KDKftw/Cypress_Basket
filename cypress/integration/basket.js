@@ -190,6 +190,7 @@ it("Basket walkthrough", function () {
 
 
 		//KROK3
+		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
 		cy.xpath('//*[@name="agreement.agree"]').click()
 
