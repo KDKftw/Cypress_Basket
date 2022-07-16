@@ -1,5 +1,4 @@
-  //"viewportWidth": 1500,
-    //"viewportHeight": 800
+
 
 
 //const URL_detail_late_departure = URL_base + "/spanelsko/mallorca/can-pastilla/ilusion-calma-a-spa?KEY=0xD0643603BDC4E4E35C5A35EB0EF348A4D66221BA&DS=1&GIATA=51639&D=1009|680|953|1108|592|611|610|612|1010|590|726|609|621|622|669|1086|1194|670|978|594|675|683&HID=131041&MT=5&DI=13&RT=15&NN=7&RD=2022-10-15&DD=2022-10-08&DP=4312&TO=4312|4305|2682|4308&MNN=7&TT=1&PID=MCMA&DPR=Fischer&TTM=1&TOM=4312|4305|2682|4308&DF=2022-10-07|2022-11-05&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0#"
@@ -37,8 +36,8 @@
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/nefeli-agios-nikita?DS=8192&GIATA=81982&D=63333|63284|63354&HID=9304&MT=1&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90009&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/recko/skyros/skyros/perigiali-beach-pensio?DS=8192&GIATA=413967&D=63333|63284|63354&HID=9326&MT=2&NN=7&RD=2022-08-08&DD=2022-08-01&DP=4312&MNN=7&TT=1&PID=PVK90013&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-01|2022-09-01&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=0"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/odysse?DS=8192&GIATA=257247&D=63333|63284|63354&HID=9313&MT=1&NN=7&RD=2022-08-17&DD=2022-08-10&DP=4312&MNN=7&TT=1&PID=PVK90010&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-10|2022-09-10&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=0"
-const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/ibiza/cala-llonga/globales-montemar?DS=8192&GIATA=9459&D=63333|63284|63354&HID=11464&MT=5&NN=7&DF=2022-08-03|2022-08-10&RD=2022-08-10&DD=2022-08-03&AC1=2&KC1=0&IC1=0&DP=4312&MNN=7&NNM=7&TT=1&TTM=1&PID=IBZ11034&DPR=EXIM%20TOURS%20ATCOM"
-
+//const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/ibiza/cala-llonga/globales-montemar?DS=8192&GIATA=9459&D=63333|63284|63354&HID=11464&MT=5&NN=7&DF=2022-08-03|2022-08-10&RD=2022-08-10&DD=2022-08-03&AC1=2&KC1=0&IC1=0&DP=4312&MNN=7&NNM=7&TT=1&TTM=1&PID=IBZ11034&DPR=EXIM%20TOURS%20ATCOM"
+const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-forcat/globales-binimar?DS=8192&GIATA=41135&D=63333|63284|63354&HID=15847&MT=5&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH11024&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=0"
 
 //EXIM DEV2 ATCOM, FW PRODUKT
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-bosch/marinda-garden?DS=256&GIATA=3596&D=63333|63284|63354&HID=11387&MT=6&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90009&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
