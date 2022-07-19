@@ -162,7 +162,7 @@ it("Basket walkthrough", function () {
 		//ulice, cislo popisne, mesto, psc
 		cy.get('.f_listTab', { timeout: 80000 }).should('be.visible')
 		//KROK2
-		//cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
+		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		objednavatelFiller()
 		cestujiciFiller(0, 1)
 		cestujiciFiller(0, 2)
@@ -173,7 +173,7 @@ it("Basket walkthrough", function () {
 
 
 		//KROK3
-		//cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
+		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
 		cy.xpath('//*[@name="agreement.agree"]').click()
 
