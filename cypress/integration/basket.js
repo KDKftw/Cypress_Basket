@@ -4,8 +4,8 @@ const { URL_detail_late_departure } = require('./import_urls');
 const JmenoPrijmeniTest = "necojineho"
 const Email = "ondrej.kadoun@fischer.cz"
 //const Email = "o.kadoun@gmail.com"
-//const PhoneNumber = "735599725"
-const PhoneNumber = "705958215"
+const PhoneNumber = "735599725"
+//const PhoneNumber = "705958215"
 const randomNumbers = "12345"
 
 const datePickerConstLocator = "birthDate"
@@ -166,7 +166,7 @@ it("Basket walkthrough", function () {
 		objednavatelFiller()
 		cestujiciFiller(0, 1)
 		cestujiciFiller(0, 2)
-		//cestujiciFiller(0, 3, "infant")	
+		cestujiciFiller(0, 4, "infant")	
 		cestujiciFiller(0, 3, "age12")
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
