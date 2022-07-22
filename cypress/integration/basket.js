@@ -65,21 +65,13 @@ function datePicker(ageOfPassenger) {
 		console.log("date picker finished")
 	}
 
-
-
-
 }
-
-
-
 
 function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, productBrand) {
 	function cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger) {
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
-
-
 
 	}
 	if (ageOfPassenger === undefined) {
@@ -92,9 +84,7 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, produc
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker()
 
-		console.log("cestujici filler finished")
-
-		
+		console.log("cestujici filler finished")		
 	}
 
 	if (ageOfPassenger === "infant") {
@@ -109,6 +99,7 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, produc
 		console.log("cestujici filler finished")
 	
 	}
+
 	if (ageOfPassenger === "age12") {
 		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)
 
@@ -122,15 +113,7 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, produc
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker("age12")
 		console.log("cestujici filler finished")
-
 	}
-	//cy.get('[data-testid="Žena"]').click()
-	//
-	//ne vsude maji nutne ctizenship, asi generalizovat do nejakeho parametru
-	//
-
-
-	
 	console.log("cestujici filler finished")
 }
 
@@ -148,9 +131,6 @@ it("Basket walkthrough", function () {
 	//cy.xpath("//*[@class='c_btn block green mt-4 relative']").click()		 //billa a penny
 	//cy.get('.flex-col > .relative > .c_btn').click() 						//billa a penny
 	cy.get('[data-testid="tab-buyOnline"]', { timeout: 40000 }).should('be.visible')
-	//cy.xpath(totalPriceBoxXpath).invoke('text').then('totalPriceStep1')
-	//var totalPriceBoxStep1 = cy.xpath(totalPriceBoxXpath).invoke('text')
-
 	cy.xpath(totalPriceBoxXpath).then(($totalPriceStep1)	=> {
 		const totalPriceBoxStep1 = $totalPriceStep1.text()
 
@@ -174,12 +154,10 @@ it("Basket walkthrough", function () {
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
-
 		//KROK3
 		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
 		cy.xpath('//*[@name="agreement.agree"]').click()
-
 		cy.xpath('//*[@name="agreement.MTK_DEK"]').click()
 
 	})
