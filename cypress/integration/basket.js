@@ -25,9 +25,6 @@ function createLocator(numberOfRoom, numberOfPassenger, typeOfInput) {
 	return finalLocator
 }
 
-
-
-
 function objednavatelFiller() {
 	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.street"]').type(JmenoPrijmeniTest)
 	cy.xpath('//*[@testid="objednavatelInfo"] //*[@name="customer.address.streetNumber"]').type(JmenoPrijmeniTest)
@@ -49,9 +46,7 @@ function datePicker(ageOfPassenger) {
 		cy.get(':nth-child(24) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
 		console.log("date picker finished")
 	}
-
 	
-
 	if (ageOfPassenger === "infant") {
 
 		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 60000 }).should('be.visible')
@@ -64,8 +59,8 @@ function datePicker(ageOfPassenger) {
 	if (ageOfPassenger === "age12") {
 
 		cy.xpath('//*[@class="vdatetime-popup"]', { timeout: 60000 }).should('be.visible')
-		cy.get('.vdatetime-year-picker__item--current').click()
-		cy.get(':nth-child(91)', { timeout: 40000 }).scrollIntoView().click()  //2012 rok narozeni
+		cy.get(':nth-child(93)', { timeout: 40000 }).scrollIntoView().click() 				  //2012 rok narozeni
+		cy.get('.vdatetime-month-picker__list > :nth-child(6)', { timeout: 40000 }).scrollIntoView().click()
 		cy.get(':nth-child(30) > :nth-child(1) > span', { timeout: 40000 }).scrollIntoView().click()
 		console.log("date picker finished")
 	}
@@ -78,7 +73,7 @@ function datePicker(ageOfPassenger) {
 
 
 
-function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
+function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, productBrand) {
 	function cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger) {
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
@@ -88,37 +83,44 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger) {
 
 	}
 	if (ageOfPassenger === undefined) {
-		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)
-		
-
-		cy.get('[data-testid="Muž"]').click()
+		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)		
+		if (productBrand === "exim") {
+			cy.get('[data-testid="Muž"]').click()
+			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+			cy.get('[data-testid="ESH"]').scrollIntoView().click()		
+		}
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker()
 
-		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
-		cy.get('[data-testid="ESH"]').scrollIntoView().click()
-
 		console.log("cestujici filler finished")
 
-		}
+		
+	}
 
 	if (ageOfPassenger === "infant") {
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker("infant")
-		//cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
-		//cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		if (productBrand === "exim") {
+			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+			cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		}
 		console.log("cestujici filler finished")
 	
 	}
 	if (ageOfPassenger === "age12") {
 		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)
-		cy.get('[data-testid="Chlapec"]').click()
+
+		if (productBrand === "exim") {
+			cy.get('[data-testid="Chlapec"]').click()
+			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
+			cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		}
+		
+
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
-		datePicker("infant")
-		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
-		cy.get('[data-testid="ESH"]').scrollIntoView().click()
+		datePicker("age12")
 		console.log("cestujici filler finished")
 
 	}
@@ -136,6 +138,7 @@ const totalPriceBoxXpath = "//*[@class='f_box f_box--price']//*[@class='f_price'
 
 it("Basket walkthrough", function () {
 
+	const productBrand = "exim"
 	Cypress.on('uncaught:exception', (err, runnable) => {
 		return false;
 	});
@@ -164,10 +167,10 @@ it("Basket walkthrough", function () {
 		//KROK2
 		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		objednavatelFiller()
-		cestujiciFiller(0, 1)
-		cestujiciFiller(0, 2)
-		cestujiciFiller(0, 4, "infant")	
-		cestujiciFiller(0, 3, "age12")
+		cestujiciFiller(0, 1, undefined,productBrand)
+		cestujiciFiller(0, 2, undefined, productBrand)
+		cestujiciFiller(0, 4, "infant", productBrand)
+		cestujiciFiller(0, 3, "age12", productBrand)
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
