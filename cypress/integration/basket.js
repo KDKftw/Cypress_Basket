@@ -149,14 +149,15 @@ it("Basket walkthrough", function () {
 		objednavatelFiller()
 		cestujiciFiller(0, 1, undefined,productBrand)
 		cestujiciFiller(0, 2, undefined, productBrand)
-		cestujiciFiller(0, 4, "infant", productBrand)
-		cestujiciFiller(0, 3, "age12", productBrand)
+		//cestujiciFiller(0, 4, "infant", productBrand)
+		//cestujiciFiller(0, 3, "age12", productBrand)
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
 		//KROK3
-		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
+		
 		cy.xpath('//*[@class="f_box f_set--active"]', { timeout: 400000 }).should('be.visible')
+		cy.xpath(totalPriceBoxXpath).invoke('text').should('be.eq', totalPriceBoxStep1)
 		cy.xpath('//*[@name="agreement.agree"]').click()
 		cy.xpath('//*[@name="agreement.MTK_DEK"]').click()
 

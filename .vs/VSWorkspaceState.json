@@ -8,5 +8,6 @@
     "\\cypress\\plugins",
     "\\cypress\\support"
   ],
+  "SelectedNode": "\\cypress.json",
   "PreviewInSolutionExplorer": false
 }

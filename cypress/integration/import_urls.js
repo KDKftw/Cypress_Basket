@@ -41,7 +41,7 @@
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/skyros/skyros/perigiali-beach-pensio?DS=8192&GIATA=413967&D=63333%7C63284%7C63354&HID=9326&MT=2&NN=7&RD=2022-08-08&DD=2022-08-01&DP=4312&MNN=7&TT=1&PID=PVK90013&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-01%7C2022-09-01&ERM=0&NNM=7%7C8%7C9%7C10%7C11%7C12%7C13&ac1=2&kc1=1&ka1=12&ic1=0#"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/agios-nikitas/odysse?DS=8192&GIATA=257247&D=63333|63284|63354&HID=9313&MT=1&NN=7&RD=2022-08-08&DD=2022-08-01&DP=4312&MNN=7&TT=1&PID=PVK90010&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-01|2022-09-01&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/recko/lefkada/nidri/delfini-h?DS=8192&GIATA=538958&D=63333|63284|63354&HID=9309&MT=2&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90004&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
-const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/recko/lefkada/vassiliki/hotel-apollo-vassilik?DS=8192&GIATA=0&D=63333|63284|63354&HID=9296&MT=2&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90002&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
+//const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/recko/lefkada/vassiliki/hotel-apollo-vassilik?DS=8192&GIATA=0&D=63333|63284|63354&HID=9296&MT=2&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90002&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
 
 //EXIM DEV2 ATCOM, FW PRODUKT
 //const URL_detail_late_departure = "https://exim2.dev.dtweb.cz/spanelsko/menorca/cala-n-bosch/marinda-garden?DS=256&GIATA=3596&D=63333|63284|63354&HID=11387&MT=6&NN=7&RD=2022-08-31&DD=2022-08-24&DP=4312&MNN=7&TT=1&PID=MAH90009&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-08-24|2022-09-24&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
@@ -59,6 +59,17 @@ const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/recko/lefkada/vassi
 	//Etravel
 //const URL_detail_late_departure = "https://etravel.dev.dtweb.cz/recko/santorini/kamari/ira-studios?KEY=2318727962&DS=1024&GIATA=0&D=63220|63281|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428|63442|63472&HID=130015&MT=6&RT=15&NN=7&DF=2022-07-08|2022-08-31&RD=2022-07-29&DD=2022-07-22&AC1=2&KC1=0&IC1=0&DP=4312&MNN=7&NNM=7|8|9&TT=1&TTM=0&PID=29292&DPR=EXIM%20TOURS"
 
+  //UAT EXIM ATCOM
+
+//const URL_detail_late_departure = "https://exim.uat.dtweb.cz/recko/lefkada/agios-nikitas/hotel-kalypso-agios-nikita?DS=8192&GIATA=0&D=63333|63284|63354&HID=9298&MT=1&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90008&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+//const URL_detail_late_departure	= "https://exim.uat.dtweb.cz/recko/lefkada/vassiliki/hotel-studia-captain?DS=8192&GIATA=0&D=63333|63284|63354&HID=9297&MT=6&NN=7&RD=2022-09-01&DD=2022-08-25&DP=4305&MNN=7&TT=1&PID=PVK90003&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-08-25|2022-09-25&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
+//const URL_detail_late_departure ="https://exim.uat.dtweb.cz/recko/lefkada/vassiliki/hotel-studia-captain?DS=8192&GIATA=0&D=63333|63284|63354&HID=9297&MT=6&NN=7&RD=2022-09-22&DD=2022-09-15&DP=4312&MNN=7&TT=1&PID=PVK90003&DPR=EXIM%20TOURS%20ATCOM&TTM=1&DF=2022-09-15|2022-10-16&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
+
+//uat fischer atcom
+//const URL_detail_late_departure ="https://exim.uat.dtweb.cz/recko/lefkada/vassiliki/kalia?DS=256&GIATA=434106&D=63333|63284|63354&HID=9302&MT=1&NN=7&RD=2022-09-21&DD=2022-09-14&DP=4312&MNN=7&TT=1&PID=PVK90007&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-09-14|2022-10-15&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
+
+//uat nevdama atcom
+const URL_detail_late_departure ="https://exim.uat.dtweb.cz/spanelsko/menorca/santo-tomas/hamilton-court?DS=16384&GIATA=52406&D=63333|63284|63354&HID=11396&MT=6&NN=7&RD=2022-09-24&DD=2022-09-17&DP=4312&MNN=7&TT=1&PID=MAH90005&DPR=NEV-DAMA%20ATCOM&TTM=1&DF=2022-09-17|2022-10-18&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0#"
 
 
 exports.URL_detail_late_departure = URL_detail_late_departure
