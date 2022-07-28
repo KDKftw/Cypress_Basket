@@ -149,8 +149,8 @@ it("Basket walkthrough", function () {
 		objednavatelFiller()
 		cestujiciFiller(0, 1, undefined,productBrand)
 		cestujiciFiller(0, 2, undefined, productBrand)
-		//cestujiciFiller(0, 4, "infant", productBrand)
-		//cestujiciFiller(0, 3, "age12", productBrand)
+		cestujiciFiller(0, 4, "infant", productBrand)
+		cestujiciFiller(0, 3, "age12", productBrand)
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 

@@ -67,9 +67,12 @@
 
 //uat fischer atcom
 //const URL_detail_late_departure ="https://exim.uat.dtweb.cz/recko/lefkada/vassiliki/kalia?DS=256&GIATA=434106&D=63333|63284|63354&HID=9302&MT=1&NN=7&RD=2022-09-21&DD=2022-09-14&DP=4312&MNN=7&TT=1&PID=PVK90007&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-09-14|2022-10-15&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
-
+const URL_detail_late_departure =					   "https://exim.uat.dtweb.cz/recko/lefkada/vassiliki/leonidas-studio?DS=256&GIATA=0&D=63333|63284|63354&HID=15903&MT=6&NN=7&RD=2022-09-22&DD=2022-09-15&DP=4312&MNN=7&TT=1&PID=PVK90020&DPR=FISCHER%20ATCOM&TTM=1&DF=2022-09-15|2022-10-16&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0"
 //uat nevdama atcom
-const URL_detail_late_departure ="https://exim.uat.dtweb.cz/spanelsko/menorca/santo-tomas/hamilton-court?DS=16384&GIATA=52406&D=63333|63284|63354&HID=11396&MT=6&NN=7&RD=2022-09-24&DD=2022-09-17&DP=4312&MNN=7&TT=1&PID=MAH90005&DPR=NEV-DAMA%20ATCOM&TTM=1&DF=2022-09-17|2022-10-18&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0#"
+//const URL_detail_late_departure ="https://exim.uat.dtweb.cz/spanelsko/menorca/santo-tomas/hamilton-court?DS=16384&GIATA=52406&D=63333|63284|63354&HID=11396&MT=6&NN=7&RD=2022-09-24&DD=2022-09-17&DP=4312&MNN=7&TT=1&PID=MAH90005&DPR=NEV-DAMA%20ATCOM&TTM=1&DF=2022-09-17|2022-10-18&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=0&ic1=0#"
 
+
+///dev2 exim produkt
+//const URL_detail_late_departure ="https://exim2.dev.dtweb.cz/egypt/hurghada/hurghada/mirage-bay-resort-a-aqua-park-hurghad?KEY=2223758608&DS=1024&GIATA=16351&D=64419|64420|64425&HID=8751&MT=5&RT=15&NN=7&RD=2022-08-28&DD=2022-08-21&DP=4312&MNN=7&TT=1&PID=33040&DPR=EXIM%20TOURS&TTM=1&DF=2022-08-21|2022-09-21&ERM=0&NNM=7|8|9|10|11|12|13&ac1=2&kc1=1&ka1=12&ic1=1"
 
 exports.URL_detail_late_departure = URL_detail_late_departure
