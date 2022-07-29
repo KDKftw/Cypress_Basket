@@ -71,15 +71,19 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, produc
 	function cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger) {
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, lastNameConstLocator)).type(JmenoPrijmeniTest)
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, firstNameConstLocator)).type(JmenoPrijmeniTest)
-		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
+		//cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
 
 	}
 	if (ageOfPassenger === undefined) {
-		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)		
+		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)
+		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
 		if (productBrand === "exim") {
 			cy.get('[data-testid="Muž"]').click()
 			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
 			cy.get('[data-testid="ESH"]').scrollIntoView().click()		
+		}
+		if (productBrand === "fischer") {
+			cy.get('[data-testid="Pan"]').click()
 		}
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker()
@@ -104,12 +108,11 @@ function cestujiciFiller(numberOfRoom, numberOfPassenger, ageOfPassenger, produc
 		cestujiciFillerAllInfoThatsAlwaysThere(numberOfRoom, numberOfPassenger)
 
 		if (productBrand === "exim") {
+			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, salutationConstLocator)).click()
 			cy.get('[data-testid="Chlapec"]').click()
 			cy.xpath(createLocator(numberOfRoom, numberOfPassenger, citizenshipConstLocator)).click()
 			cy.get('[data-testid="ESH"]').scrollIntoView().click()
-		}
-		
-
+		}		
 		cy.xpath(createLocator(numberOfRoom, numberOfPassenger, datePickerConstLocator)).click()
 		datePicker("age12")
 		console.log("cestujici filler finished")
@@ -121,7 +124,8 @@ const totalPriceBoxXpath = "//*[@class='f_box f_box--price']//*[@class='f_price'
 
 it("Basket walkthrough", function () {
 
-	const productBrand = "exim"
+	//const productBrand = "exim"
+	const productBrand = "fischer"
 	Cypress.on('uncaught:exception', (err, runnable) => {
 		return false;
 	});
@@ -149,8 +153,9 @@ it("Basket walkthrough", function () {
 		objednavatelFiller()
 		cestujiciFiller(0, 1, undefined,productBrand)
 		cestujiciFiller(0, 2, undefined, productBrand)
-		cestujiciFiller(0, 3, "infant", productBrand)
-		//cestujiciFiller(0, 3, "age12", productBrand)
+		//cestujiciFiller(0, 3, "infant", productBrand)
+		cestujiciFiller(0, 3, "age12", productBrand)
+		cestujiciFiller(0, 4, "age12", productBrand)
 
 		cy.get('[data-testid="nextStep"]').scrollIntoView().click()
 
